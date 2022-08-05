@@ -1,0 +1,42 @@
+Fazer um site de estoque para produtos de um supermercado com 2 telas em angular 
+1.HomePage -> uma tela que terá somente uma tabela que lista todos os produtos, a tabela terá uma coluna para cada atributo do produto, os atributos são:
+codigoProduto, nomeProduto, quantidade, marca, categoria(limpeza, alimento, etc...)
+no final de cada item da tabela devem haver dois botões: exluir e editar.
+Na pagina deve haver um botão para adicionar produtos.
+
+2.manterProduto ->
+
+Primeiro fluxo :
+
+Ao clicar no botão de editar do produto você sera redirecionado para essa pagina, ela deve conter um formulário editável com um campo para cada atributo 
+do produto, um botão de salvar e um de cancelar, todos os campos ja devem vir preenchidos com todos os dados atuais do produto.
+
+Segundo fluxo:
+
+Ao clicar no botão de adicionar produto você sera redirecionado para está tela, porém todos os campos estarão vazios.
+
+Validação
+A pagina deve permitir a inclusão ou edição de um produto somente se todos os campos estiverem preenchidos .
+A pagina devera soltar um alerta para o usuario caso algum campo esteja vazio ou preenchido incorretamente
+
+
+Backend:
+O backend devera conter quatro funções 
+
+criarProduto:
+Devera aceita por meio do body um json com todos os dados do produto menos o codigo, o codigo devera ser autoGerado no banco de dados. a api deverá retornar 
+um json com o produto enviado pelo usuario em caso de sucesso, em caso de erro uma mensagem em json específicando o erro.
+
+editarProduto: Deverá aceitar um body igual ao criar produto e recebera no path da url o codigo do produto que devera ser alterado.
+
+excluirProduto:
+devera receber no path da url o codigo do produto a ser excluido e devera retornar uma mensagem de erro ou sucesso em JSON.
+
+listarProdutos:
+Deverá  retornar um array de objetos em JSON com todos os produtos cadastrados.
+ 
+
+observações:
+todas as mensagens de sucesso devem ter status code 200
+
+todas as mensagens de erro devem ter statuscode referente ao erro ocorrido
